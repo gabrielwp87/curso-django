@@ -29,4 +29,10 @@ jobs:
         pipenv sync --dev
     - name: Run Tests
       run: |
-        pipenv run pytest
+        pipenv run pytest --cov=pypro
+
+    - name: Upload coverage to Codecov
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      run: |
+        pipenv run codecov
