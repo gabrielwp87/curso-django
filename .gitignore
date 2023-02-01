@@ -137,7 +137,8 @@ bin/
 *.sqlite3
 
 # Django
-staticfiles
+staticfiles/
+mediafiles/
 
 # postgres files for local developement
 .pgdata
