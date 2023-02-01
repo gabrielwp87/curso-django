@@ -126,7 +126,7 @@ USE_TZ = True
 
 # Configuração de ambiente de desenvolvimento
 
-STATIC_URL = "/static/"
+STATIC_URL = "/static//"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Varávies destinadas a upload de arquivos, caso o site permita
