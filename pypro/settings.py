@@ -168,7 +168,6 @@ if AWS_ACCESS_KEY_ID:
     STATIC_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}'
     ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
-
     # Upload Media Folder
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.StaticStorage'
     DEFAULT_S3_PATH = 'media'
@@ -178,6 +177,14 @@ if AWS_ACCESS_KEY_ID:
     INSTALLED_APPS.append('s3_folder_storage')
     INSTALLED_APPS.append('storages')
 
+SENTRY_DNS = config('SENTRY_DNS', default=None)
+
+if SENTRY_DNS:
+    import sentry_sdk
+    from sentry_sdk.integrations.django import DjangoIntegration
+
+    sentry_sdk.init(
+        dsn=SENTRY_DNS, integrations=[DjangoIntegration()])
 
 
 # Default primary key field type
