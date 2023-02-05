@@ -151,7 +151,7 @@ AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 if AWS_ACCESS_KEY_ID:
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_OBJECT_PARAMETERS = {'CacheControel': 'max-age=86400', }
+    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400', }
     AWS_PRELOAD_METADATA = True
     AWS_AUTO_CREATE_BUCKET = False
     AWS_QUERYSTRING_AUTH = False
@@ -177,14 +177,14 @@ if AWS_ACCESS_KEY_ID:
     INSTALLED_APPS.append('s3_folder_storage')
     INSTALLED_APPS.append('storages')
 
-SENTRY_DNS = config('SENTRY_DNS', default=None)
+SENTRY_DSN = config('SENTRY_DNS', default=None)
 
-if SENTRY_DNS:
+if SENTRY_DSN:
     import sentry_sdk
     from sentry_sdk.integrations.django import DjangoIntegration
 
     sentry_sdk.init(
-        dsn=SENTRY_DNS, integrations=[DjangoIntegration()])
+        dsn=SENTRY_DSN, integrations=[DjangoIntegration()])
 
 
 # Default primary key field type
