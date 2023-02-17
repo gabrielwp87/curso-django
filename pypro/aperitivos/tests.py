@@ -18,4 +18,4 @@ def test_titulo_video(resp):
 
 
 def test_conteudo_video(resp):
-    assert_contains(resp, 'https://www.youtube.com/watch?v=b899h0lNd7U')
+    assert_contains(resp, 'https://vimeo.com/799826779')
