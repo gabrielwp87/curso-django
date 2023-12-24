@@ -47,7 +47,6 @@ jobs:
         pipenv run pytest --cov=pypro
 
     - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      run: |
-        pipenv run codecov
