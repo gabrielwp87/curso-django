@@ -142,3 +142,6 @@ mediafiles/
 
 # postgres files for local developement
 .pgdata
+
+# pesssoal
+fazer.txt
