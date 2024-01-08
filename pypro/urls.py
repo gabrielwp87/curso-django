@@ -19,9 +19,15 @@ from django.urls import path, include
 from pypro.base.views import home
 from django.conf import settings
 
+
+def trigger_error(request):   # To test sentry
+    division_by_zero = 1 / 0
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
+    path('sentry-debug/', trigger_error),  # To test sentry
 ]
 
 if settings.DEBUG:
@@ -30,5 +36,3 @@ if settings.DEBUG:
     urlpatterns.append(
         path('__debug__/', include(debug_toolbar.urls))
     )
-
-
