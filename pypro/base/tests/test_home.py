@@ -1,7 +1,6 @@
 import pytest
-from django.test import Client
 
-from pypro.base.django_assertions import assert_contains
+from pypro.django_assertions import assert_contains
 from django.urls import reverse
 
 @pytest.fixture
