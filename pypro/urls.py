@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from pypro.base.views import home
+
 from django.conf import settings
 
 
@@ -26,8 +26,7 @@ def trigger_error(request):   # To test sentry
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
-    path('sentry-debug/', trigger_error),  # To test sentry
+    path('', include('pypro.base.urls')),
 ]
 
 if settings.DEBUG:
