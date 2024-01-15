@@ -17,22 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from django.conf import settings
+from pypro.aperitivos.views import video
 
-
-def trigger_error(request):   # To test sentry
-    division_by_zero = 1 / 0
-
-
+app_name = 'aperitivos'
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('pypro.base.urls')),
-    path('aperitivos/', include('pypro.aperitivos.urls')),
+    path('<slug:slug>', video, name='video'),
 ]
 
-if settings.DEBUG:
-    import debug_toolbar
 
-    urlpatterns.append(
-        path('__debug__/', include(debug_toolbar.urls))
-    )
