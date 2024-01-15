@@ -19,6 +19,11 @@ from django.urls import path, include
 
 from django.conf import settings
 
+
+def trigger_error(request):   # To test sentry
+    division_by_zero = 1 / 0
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pypro.base.urls')),
@@ -30,5 +35,3 @@ if settings.DEBUG:
     urlpatterns.append(
         path('__debug__/', include(debug_toolbar.urls))
     )
-
-
