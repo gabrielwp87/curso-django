@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from pypro.aperitivos.views import video
+from pypro.aperitivos.views import video, indice
 
 app_name = 'aperitivos'
 urlpatterns = [
     path('<slug:slug>', video, name='video'),
+    path('', indice, name='indice'),
 ]
 
 
