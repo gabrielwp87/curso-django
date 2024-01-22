@@ -24,5 +24,3 @@ urlpatterns = [
     path('<slug:slug>', video, name='video'),
     path('', indice, name='indice'),
 ]
-
-
