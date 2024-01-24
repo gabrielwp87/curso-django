@@ -15,5 +15,5 @@ def indice(resquest):
 
 
 def video(resquest, slug):
-    video = videos.objects.get(slug=slug)
+    video = Video.objects.get(slug=slug)
     return render(resquest, 'aperitivos/video.html', context={'video': video})
