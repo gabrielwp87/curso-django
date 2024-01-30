@@ -16,24 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-from django.conf import settings
-
-
-def trigger_error(request):   # To test sentry
-    division_by_zero = 1 / 0
+from pypro.modulos import views
 
 
+app_name = 'modulos'
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('pypro.base.urls')),
-    path('aperitivos/', include('pypro.aperitivos.urls')),
-    path('modulos/', include('pypro.modulos.urls')),
+    path('<slug:slug>', views.detalhe, name='detalhe'),
 ]
-
-if settings.DEBUG:
-    import debug_toolbar
-
-    urlpatterns.append(
-        path('__debug__/', include(debug_toolbar.urls))
-    )
