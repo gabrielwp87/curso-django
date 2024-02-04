@@ -42,12 +42,29 @@
           {% endfor %}
         </div>
       </li>
+    </ul>
 
+    {% if user.is_authenticated %}
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                {{ user.first_name }}
+            </a>
+            <div class="dropdown-menu">
+                <div class="dropdown-item">
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button class="btn btn-danger" type="submit">Sair</button>
+                    </form>
+{#                    <a class="btn btn-danger" href="{% url 'logout' %}" >Sair</a>#}
+                </div>
+            </div>
+      </li>
+    </ul>
 
-
-
-					</ul>
+    {% else %}
     <a class="btn btn-light my-2" href="{% url 'login' %}">Entrar</a>
+    {% endif %}
 
   </div>
 </nav>
