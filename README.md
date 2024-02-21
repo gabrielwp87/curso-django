@@ -4,7 +4,7 @@ Código desenvolvido no módulo de Django plataforma.dev.pro.br
 
 Aplicação disponível [aqui](https://curso-django.fly.dev/)
 
-[![codecov](https://codecov.io/gh/gabrielwp87/curso-django/branch/main/graph/badge.svg?token=9kIHtEujlU)](https://codecov.io/gh/gabrielwp87/curso-django)
+[![codecov](https://codecov.io/gh/gabrielwp87/curso-django/graph/badge.svg?token=T9InVYwlqZ)](https://codecov.io/gh/gabrielwp87/curso-django)
 
 Suportada versão 3 de Python e versão 4.6 do [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
 
