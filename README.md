@@ -2,7 +2,7 @@
 
 Código desenvolvido no módulo de Django plataforma.dev.pro.br
 
-Aplicação disponível [aqui](https://curso-django.fly.dev/)
+
 
 [![codecov](https://codecov.io/gh/gabrielwp87/curso-django/graph/badge.svg?token=T9InVYwlqZ)](https://codecov.io/gh/gabrielwp87/curso-django)
 
